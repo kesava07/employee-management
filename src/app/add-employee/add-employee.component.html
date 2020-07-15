@@ -1,0 +1,49 @@
+<section class="add_employee">
+    <h3>Add Employee</h3>
+    <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+        <div>
+            <label for="name">Employee Name:</label>
+            <input required minlength="3" ngModel #name="ngModel" pattern="[a-zA-Z ]*" name="name" id="name"
+                type="text">
+            <div *ngIf="!name.valid && name.touched">
+                <small *ngIf="name.errors.required">Name required</small>
+                <small *ngIf="name.errors.pattern"> Name should be alphabets </small>
+                <small *ngIf="name.errors.minlength"> Name should be atleast 3 charecters </small>
+            </div>
+        </div>
+        <div>
+            <label for="location">Location:</label>
+            <select required ngModel #location="ngModel" name="location" id="location">
+                <option value="" selected disabled>Select a location</option>
+                <option value="Bangalore"> Bangalore</option>
+                <option value="Chennai"> Chennai</option>
+                <option value="Hyderabad"> Hyderabad</option>
+                <option value="Pune"> Pune</option>
+            </select>
+            <div *ngIf="!location.valid && location.touched">
+                <small *ngIf="location.errors.required">Please select Location</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input ngModel #email="ngModel" required email name="email" id="email" type="email"
+                placeholder="enter valid email">
+            <div *ngIf="!email.valid && email.touched">
+                <small *ngIf="email.errors.required">Enter a valid email</small>
+            </div>
+        </div>
+        <div>
+            <label for="mobile"> Mobile: </label>
+            <input required ngModel #mobile="ngModel" pattern="[0-9]+" name="mobile" id="mobile" type="text"
+                minlength="10" maxlength="10">
+            <div *ngIf="!mobile.valid && mobile.touched">
+                <small *ngIf="mobile.errors.required">Mobile number required</small>
+                <small *ngIf="mobile.errors.pattern">Enter valid Mobile number</small>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!employeeForm.valid">
+            {{editEmployee ? "Update" :"Submit"}}
+        </button>
+    </form>
+</section>

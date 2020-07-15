@@ -1,0 +1,15 @@
+label{
+    display: inline-block;
+    width: 150px;
+}
+
+.add_employee form{
+    margin: 30px;
+}
+.add_employee div{
+    margin-bottom: 15px;
+}
+.add_employee small{
+    color: red;
+    margin-left: 11.2em;
+}

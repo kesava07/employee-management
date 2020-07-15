@@ -1,0 +1,10 @@
+.details div{
+    margin-bottom: 15px;
+}
+.details label{
+    width: 150px;
+    display: inline-block;
+}
+.details p{
+    color: red;
+}

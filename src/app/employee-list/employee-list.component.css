@@ -1,0 +1,19 @@
+.employee_list{
+    margin-top: 30px;
+}
+.employee_list label{
+    display: block;
+}
+.employee_list input {
+    margin-bottom: 15px;
+}
+
+table{
+    margin-top: 25px;
+    width: 75%;
+    border-collapse: collapse;
+}
+table ,th, td{
+    border: 1px solid black;
+    padding: 10px;
+}

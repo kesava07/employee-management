@@ -1,0 +1,38 @@
+<section class="employee_list">
+    <label>Filter:</label>
+    <input [(ngModel)]="searchTerm" type="text" placeholder="Search" id="filter" />
+    <label>Total Number of Employees: {{employees &&  employees.length}} </label>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Email</th>
+                <th>Mobile</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees | filter:searchTerm ">
+                <td>
+                    <a routerLink="/contextroot/details" [queryParams]="{ employeeId: employee.id }">{{employee.id}}</a>
+                </td>
+                <td> {{employee.name}} </td>
+                <td> {{employee.location}} </td>
+                <td> {{employee.email}} </td>
+                <td> {{employee.mobile}} </td>
+                <td>
+                    <button>
+                        <a routerLink="/contextroot/editEmployee/{{employee.id}}">Edit{{employee.id}}</a>
+                    </button>
+                <td>
+                    <button (click)="deleteEmployee(employee.id)">
+                        <a>Delete{{employee.id}}</a>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>

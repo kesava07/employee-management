@@ -1,0 +1,24 @@
+<section class="details">
+    <h3>Employee Details</h3>
+    <div *ngIf="employee">
+        <div>
+            <label>Id:</label>{{employee.id}}
+        </div>
+        <div>
+            <label>Employee Name:</label>{{employee.name}}
+        </div>
+        <div>
+            <label>Location:</label>{{employee.location}}
+        </div>
+        <div>
+            <label>Email:</label>{{employee.email}}
+        </div>
+        <div>
+            <label>Mobile:</label>{{employee.mobile}}
+        </div>
+    </div>
+    <button (click)="redirect()" >Back</button>
+    <div *ngIf="errorMessage">
+        <p>{{errorMessage}}</p>
+    </div>
+</section>
